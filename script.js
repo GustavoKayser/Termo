@@ -8,7 +8,7 @@ function addLetter(letter) {
     if (index >= 5) {
         return;
     }
-    document.querySelectorAll("#i" + index.toString())[row].innerHTML = letter.toUpperCase();
+    document.querySelectorAll("#i" + index.toString())[row].innerHTML = `<p>${letter.toUpperCase()}</p>`;
     index ++;
 }
 
@@ -18,7 +18,7 @@ function removeLetter() {
     }
 
     index --;
-    document.querySelectorAll("#i" + index.toString())[row].innerHTML = "";
+    document.querySelectorAll("#i" + index.toString())[row].innerHTML = "<p>⠀</p>";
 }
 
 function isValid(word) {
@@ -47,7 +47,6 @@ function changeRow() {
         if (i == index) {
             document.querySelectorAll("#i" + i.toString())[row].classList.add("selected");
             document.querySelectorAll("#i" + i.toString())[row].classList.remove("in-row");
-            document.querySelector(".selected").style.height = "69px";
         } else {
             document.querySelectorAll("#i" + i.toString())[row].classList.add("in-row");
             document.querySelectorAll("#i" + i.toString())[row].classList.remove("selected");
@@ -146,7 +145,7 @@ function setKey(key) {
 }
 
 document.querySelector("#keyboard").addEventListener('click', e => {
-    if (e.target.classList.value == "keyboard-key") {
+    if (e.target.classList.value == "keyboard-key noselect") {
         setKey(e.target.textContent);
     }
 });
