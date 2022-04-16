@@ -124,22 +124,35 @@ function playAgain() {
 
 changeRow();
 
-window.addEventListener('keydown', e => {
+function setKey(key) {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
-    let keypressed = e.key;
-    
     if (!canPlay) {
         return;
     }
+    if (key.length <= 1) {
+        key = key.toLowerCase();
+    }
 
-    if (alphabet.includes(keypressed)) {
-        addLetter(keypressed);
+    if (alphabet.includes(key)) {
+        addLetter(key);
         changeRow();
-    } else if (keypressed == "Backspace") {
+    } else if (key == "Backspace") {
         removeLetter();
         changeRow();
-    } else if (keypressed == "Enter") {
+    } else if (key == "Enter") {
         enterWord();
         removeBorder(row - 1);
+    } 
+}
+
+document.querySelector("#keyboard").addEventListener('click', e => {
+    if (e.target.classList.value == "keyboard-key") {
+        setKey(e.target.textContent);
     }
+});
+
+window.addEventListener('keydown', e => {
+    let keypressed = e.key;
+
+    setKey(keypressed);
 });
