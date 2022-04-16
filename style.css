@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --dark-color: #312a2c;
+    --default-color: #615458;
+    --light-color: #6e5c62;
+    --wrong-color: #312a2c;
+    --right-color: #3aa394;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--light-color);
+}
+
+h1 {
+    margin: 20px 0px;
+    font-size: 3em;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+h1, ul {
+    text-align: center;
+    font-family: 'Mitr', Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    border-spacing: 5px;
+}
+
+#content {
+    margin: auto;
+    width: 435px;
+    margin-bottom: 50px;
+}
+
+#keyboard {
+    color: whitesmoke;
+    font-family: 'Mitr', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#keyboard p {
+    background-color: var(--default-color);
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 16pt;
+    margin: 3px;
+    cursor: pointer;
+}
+
+#congratulations {
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    color: rgba(245, 245, 245, 0);
+    font-family: 'Mitr', Arial, Helvetica, sans-serif;
+    justify-content: center;
+    font-size: 25pt;
+    transform: translate(0, 50%);
+    background-color: #312a2c00;
+    left: 0;
+    right: 0;
+}
+
+#congratulations.fade-in {
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    background-color: #312a2c94;
+    color: rgb(245, 245, 245);
+}   
+
+#congratulations.fade-out {
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    background-color: #312a2c00;
+    color: rgba(245, 245, 245, 0);
+}
+
+#congratulations h2 {
+    margin-top: 50px;
+}
+
+.selected {
+    border: 6px solid #4C4347;
+    border-bottom: 17px solid #4C4347;
+}
+
+.in-row {
+    border: 6px solid #4C4347;
+}
+
+li {
+    display: table-cell;
+    border-spacing: 5px;
+    background-color: var(--default-color);
+    border-radius: 7px;
+    color: whitesmoke;
+    font-size: 50px;
+    font-weight: 600;
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+#play-again {
+    font-family: 'Mitr', Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    background-color: #221e1e00;
+    cursor: pointer;
+    width: 500px;
+    height: 80px;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    outline: none;
+    border-style: hidden;
+    border-radius: 10px;
+    font-size: 20pt;
+}
+
+#play-again.fade-in {
+    -webkit-transition: 1.5s;
+    -moz-transition: 1.5s;
+    -ms-transition: 1.5s;
+    -o-transition: 1.5s;
+    transition: 1.5s;
+    background-color: #221e1e;
+    color: whitesmoke;
+}
+
+#play-again.fade-out {
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    background-color: #221e1e00;
+    color: rgba(245, 245, 245, 0);
+}
+
+
+@media (max-width: 440px) {
+    li {
+        width: 55px;
+        height: 55px;
+        font-size: 35px;
+    }
+
+    #content {
+        margin: auto;
+        width: 305px;
+    }
+
+    #congratulations {
+        font-size: 20pt;
+    }
+
+    #keyboard p {
+        font-size: 14pt;
+    }
+}
